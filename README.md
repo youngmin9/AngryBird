@@ -2,8 +2,8 @@
 
 소현 Task (공통agenda: Chat GPT fine-tuning 시도)
 1) gpt API 연결 후 기본 챗봇 형태 구현
-2) 웰니스 대화 데이터셋 학습 
-추가) 영민이 보낸 감성 분석 코드가 적용 시도(반복)
+2) 웰니스 대화 데이터셋 학습 \n
+추가) 영민이 보낸 감성 분석 코드 적용 시도 및 반복
 
 
 연제 Task (공통agenda: Chat GPT fine-tuning 시도)
