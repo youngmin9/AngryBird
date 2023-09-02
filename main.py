@@ -7,16 +7,16 @@ from textblob_text import TextBlob
 # Emotion Grading Function, 등급 나누는 방식 설정
 def grade_emotion(sentiment):
     if sentiment >= 0.5:
-        return "High"
+        return "5[High]"
     elif sentiment >= 0 and sentiment < 0.5:
-        return "Medium"
+        return "3[Neutral]"
     else:
-        return "Low"
+        return "1[Low]"
     
 
 # load_dotenv()
-st.set_page_config(page_title="Emotion Analysis Chatbot", page_icon="😡")
-st.title("💬 Chatbot") 
+st.set_page_config(page_title="[Gamjung Garbage] 감정 쓰레기통", page_icon="😡")
+st.title("😡 [Gamjung Garbage] 감정 쓰레기통 ") 
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 # with st.sidebar:
@@ -26,7 +26,7 @@ openai_api_key = st.secrets["OPENAI_API_KEY"]
 #     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
+    st.session_state["messages"] = [{"role": "assistant", "content": " 무엇 때문에 기분이 좋지 않으신가요? "}]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
