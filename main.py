@@ -15,8 +15,8 @@ def grade_emotion(sentiment):
     
 
 # load_dotenv()
-st.set_page_config(page_title="[Emotion Garbage] 감정 쓰레기통", page_icon="😡")
-st.title("😡 [Emotion Garbage] 감정 쓰레기통") 
+st.set_page_config(page_title="Emotion Garbage", page_icon="😡")
+st.title("😡 [Emotion Garbage] Chatbot") 
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 # with st.sidebar:
