@@ -1,9 +1,9 @@
 import openai 
 import streamlit as st
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from textblob_text import TextBlob
-import random
+# import random
 
 # Emotion Grading Function, 등급 나누는 방식 설정
 def grade_emotion(sentiment):
@@ -15,10 +15,11 @@ def grade_emotion(sentiment):
         return "Low"
     
 
-load_dotenv()
+# load_dotenv()
 st.set_page_config(page_title="Emotion Analysis Chatbot", page_icon="😡")
 st.title("💬 Chatbot") 
-openai_api_key = os.getenv('OPENAI_API_KEY')
+# openai_api_key = os.getenv('OPENAI_API_KEY')
+openai_api_key = "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"
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
