@@ -31,7 +31,7 @@ sia = SentimentIntensityAnalyzer()
 
 # Streamlit configuration
 st.set_page_config(page_title="angrychat", page_icon="😡")
-st.title("😡 [Emotion Garbage] 앵그리챗") 
+st.title("😡 [감정 쓰레기통] Angry Chat") 
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 # with st.sidebar:
@@ -61,9 +61,13 @@ if prompt := st.chat_input():
     # VADER Sentiment Analyzer를 사용하여 감정 분석
     sentiment_scores = sia.polarity_scores(prompt)
     compound_score = sentiment_scores['compound']
+    pos_score =sentiment_scores['pos']
+    neg_score = sentiment_scores['neg']
+    neu_score = sentiment_scores['neu']
+
     emotion_grade = grade_emotion(compound_score)
 
-    st.write(f"Angry Level: {emotion_grade}, score: {sentiment_scores} compound: {compound_score}")
+    st.write(f"Angry Level: {emotion_grade} \n긍정 지수: {pos_score} \n중립 지수: {neu_score} \n부정 지수: {neg_score} \n종합 분노 점수: {compound_score}")
     st.chat_message("assistant").write(msg.content)
 
 # import openai 
