@@ -6,23 +6,23 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # Emotion Grading Function, 등급 나누는 방식 설정
 def grade_emotion(sentiment):
-    if sentiment >= 0.7:
-        return "5[매우 높은 분노 수준]"
-    elif sentiment >= 0.5:
-        return "4[높은 분노 수준]"
-    elif sentiment >= 0.3:
-        return "3[중간 분노 수준]"
-    elif sentiment >= 0.1:
-        return "2[낮은 분노 수준]"
-    else:
-        return "1[매우 낮은 분노 수준]"
+    # if sentiment >= 0.7:
+    #     return "5[매우 높은 분노 수준]"
+    # elif sentiment >= 0.5:
+    #     return "4[높은 분노 수준]"
+    # elif sentiment >= 0.3:
+    #     return "3[중간 분노 수준]"
+    # elif sentiment >= 0.1:
+    #     return "2[낮은 분노 수준]"
+    # else:
+    #     return "1[매우 낮은 분노 수준]"
     
-#    if sentiment >= 0.5:
-#        return "5[High]"
-#    elif sentiment >= 0 and sentiment < 0.5:
-#        return "3[Neutral]"
-#    else:
-#        return "1[Low]"
+   if sentiment >= 0.5:
+       return "5[High]"
+   elif sentiment >= 0 and sentiment < 0.5:
+       return "3[Neutral]"
+   else:
+       return "1[Low]"
 
 
 # Initialize VADER Sentiment Analyzer
@@ -67,7 +67,11 @@ if prompt := st.chat_input():
 
     emotion_grade = grade_emotion(compound_score)
 
-    st.write(f"Angry Level: {emotion_grade} \n긍정 지수: {pos_score} \n중립 지수: {neu_score} \n부정 지수: {neg_score} \n종합 분노 점수: {compound_score}")
+    st.write(f"Angry Level: {emotion_grade}")
+    st.write(f"긍정 지수: {pos_score}")
+    st.write(f"중립 지수: {neu_score}")
+    st.write(f"부정 지수: {neg_score}")
+    st.write(f"종합 분노 점수: {compound_score}")
     st.chat_message("assistant").write(msg.content)
 
 # import openai 
