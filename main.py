@@ -63,7 +63,7 @@ if prompt := st.chat_input():
     compound_score = sentiment_scores['compound']
     emotion_grade = grade_emotion(compound_score)
 
-    st.write(f"Angry Level: {emotion_grade}")
+    st.write(f"Angry Level: {emotion_grade}, score: {sentiment_scores}")
     st.chat_message("assistant").write(msg.content)
 
 # import openai 
