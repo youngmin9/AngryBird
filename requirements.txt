@@ -2,3 +2,4 @@ openai==0.27.10
 streamlit==1.26.0
 textblob==0.17.1
 pandas==2.0.3
+nltk
